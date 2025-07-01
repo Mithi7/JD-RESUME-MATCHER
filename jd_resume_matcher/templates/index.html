@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Matcher</h1>
+    <form method="post" enctype="multipart/form-data">
+      <label>Job Description (PDF/TXT):</label>
+      <input type="file" name="jd" required>
+      <label>Resumes (PDF/TXT, multi-select):</label>
+      <input type="file" name="resumes" multiple required>
+      <button type="submit">Match</button>
+    </form>
+
+    {% if results %}
+    <h2>Results</h2>
+    <table>
+      <tr><th>Resume</th><th>Match Score (%)</th></tr>
+      {% for name, score in results %}
+      <tr><td>{{ name }}</td><td>{{ score }}</td></tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+  </div>
+</body>
+</html>
