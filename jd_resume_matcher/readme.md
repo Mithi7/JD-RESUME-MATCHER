@@ -22,6 +22,7 @@ A smart AI python-based web application that matches a **Job Description(JD)** a
 
 ## Project structure
 
+```
 jd_resume_matcher/
 ├── pycache/
 │ ├── matcher.cpython-313.pyc
@@ -35,7 +36,7 @@ jd_resume_matcher/
 ├── utils.py # File processing utilities
 ├── requirements.txt # List of Python dependencies
 
-
+```
 ---
 
 ## How to Run the App
