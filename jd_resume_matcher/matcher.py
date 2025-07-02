@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 assert os.getenv("OPENAI_API_KEY"), "Set OPENAI_API_KEY"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-def score_resume_llm(jd_text, resume_text, model="gpt-3.5-turbo"):
+def score_resume_llm(jd_text, resume_text, model="gpt-4"):
     prompt = [
         {"role": "system", "content": "You are a recruiter. Rate how well this resume fits the job description on a scale 0–100. Return JSON {\"score\": <int>}."},
         {"role": "user", "content": jd_text},
